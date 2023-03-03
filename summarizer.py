@@ -31,10 +31,15 @@ def transcribe(audio_filename: Path) -> str:
             )
         else:
             transcript = {
-                "transcript": "This is a test transcript. It is only a test.",
-                "confidence": 0.999,
+                "choices": [
+                    {
+                        "message": {
+                            "content": "This is a test",
+                        }
+                    }
+                ],
             }
-        logging.debug("Transcribing complete.")
+        logging.info("Transcribing complete.")
         return transcript
 
 
@@ -72,8 +77,8 @@ def save_summary(summary, filename):
 if __name__ == "__main__":
     # Argparse
     parser = argparse.ArgumentParser(description="Summarize a podcast recording")
-    parser.add_argument("filename", help="The filename of the audio file to summarize")
     parser.add_argument("command", help="The command to run (transcribe or summarize)")
+    parser.add_argument("filename", help="The filename of the audio file to summarize")
     parser.add_argument(
         "-log",
         "--loglevel",
@@ -171,5 +176,5 @@ if __name__ == "__main__":
         print(summary["choices"][0]["message"]["content"])
 
     else:
-        print("Error: command not recognized")
+        print(f"Error: command {args.command} not recognized")
         exit(1)
