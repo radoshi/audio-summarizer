@@ -31,29 +31,21 @@ The process of tuning prompts proved challenging. Key obstacles include:
 
 GPT Summary
 
-```text
-In this podcast episode, Angela Duckworth and Stephen Dubner discuss the history and commercialization of birthdays, as well as alternative ways to celebrate loved ones. They also explore the concept of temporal landmarks and their role in reflecting on one's life and making changes. The hosts share personal experiences with birthday rituals and surprise parties, and acknowledge the value of social rituals in human societies. They also question the tradition of blowing out candles on a cake and suggest the need for a "spit guard." The episode concludes with a fact check and promotion of their other shows, along with information on how to listen ad-free and submit questions for future episodes.
-```
+> In this podcast episode, Angela Duckworth and Stephen Dubner discuss the history and commercialization of birthdays, as well as alternative ways to celebrate loved ones. They also explore the concept of temporal landmarks and their role in reflecting on one's life and making changes. The hosts share personal experiences with birthday rituals and surprise parties, and acknowledge the value of social rituals in human societies. They also question the tradition of blowing out candles on a cake and suggest the need for a "spit guard." The episode concludes with a fact check and promotion of their other shows, along with information on how to listen ad-free and submit questions for future episodes.
 
 Author Summary
 
-```text
-Birthdays! Why do Americans prefer Thanksgiving and the Fourth of July to theirs? Why do they make Stephen think of molasses and chicken feed? And is “Happy Birthday” the worst song ever written?
-```
+> Birthdays! Why do Americans prefer Thanksgiving and the Fourth of July to theirs? Why do they make Stephen think of molasses and chicken feed? And is “Happy Birthday” the worst song ever written?
 
 ### [Techmeme Ride Home Thursday 3/02](https://www.ridehome.info/show/techmeme-ride-home/thu-0302-and-right-on-schedule-here-come-the-apis/)
 
 GPT Summary
 
-```text
-OpenAI has launched a chat GPT API for businesses, with Snap and Shopify among the early adopters. Microsoft has updated its Bing chatbot to let users toggle between creative, balanced, and precise tones. Microsoft researchers have unveiled Cosmos One, a multimodal LLM they claim can understand image content and pass visual IQ tests. Apple blocked an update to the BlueMail app that added ChachiBT-powered features over inappropriate content concerns requiring a 17-plus age limit. Snap plans to let users pause streaks by buying streak restores for 99 cents each time and will soon let Snapchat Plus subscribers pause streaks indefinitely. The podcast also features an ad for NFT Talon and Radial Development Group. The segment ends with a discussion on in-app purchases and how TikTok has generated more revenue than Facebook, Instagram, Snapchat. Neuralink, a company founded in 2016, is set to begin human trials for a brain implant to treat conditions such as paralysis and blindness. However, the US FDA rejected the company's application due to safety concerns regarding the device's lithium battery, the potential migration of the implant's wires, and the device's removal without damaging brain tissue.
-```
+> OpenAI has launched a chat GPT API for businesses, with Snap and Shopify among the early adopters. Microsoft has updated its Bing chatbot to let users toggle between creative, balanced, and precise tones. Microsoft researchers have unveiled Cosmos One, a multimodal LLM they claim can understand image content and pass visual IQ tests. Apple blocked an update to the BlueMail app that added ChachiBT-powered features over inappropriate content concerns requiring a 17-plus age limit. Snap plans to let users pause streaks by buying streak restores for 99 cents each time and will soon let Snapchat Plus subscribers pause streaks indefinitely. The podcast also features an ad for NFT Talon and Radial Development Group. The segment ends with a discussion on in-app purchases and how TikTok has generated more revenue than Facebook, Instagram, Snapchat. Neuralink, a company founded in 2016, is set to begin human trials for a brain implant to treat conditions such as paralysis and blindness. However, the US FDA rejected the company's application due to safety concerns regarding the device's lithium battery, the potential migration of the implant's wires, and the device's removal without damaging brain tissue.
 
 Author Summary
 
-```
-A ChatGPT API for business is here. Microsoft gives Bing those nobs and dials that I’ve been talking about. What are multimodal LLMs? New turmoil in crypto, this time around one of the big crypto friendly banks. How is it going in terms of social platforms diversifying into subscription revenue? And why the FDA has rejected Neuralink’s applications to begin human testing of brain implants.
-```
+> A ChatGPT API for business is here. Microsoft gives Bing those nobs and dials that I’ve been talking about. What are multimodal LLMs? New turmoil in crypto, this time around one of the big crypto friendly banks. How is it going in terms of social platforms diversifying into subscription revenue? And why the FDA has rejected Neuralink’s applications to begin human testing of brain implants.
 
 ## Usage
 
