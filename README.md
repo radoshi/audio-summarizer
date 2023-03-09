@@ -1,5 +1,7 @@
 # podcast-summarizer
 
+<img alt="DALL-E: 3d render of a stylish podcast microphone on a light yellow background" src="https://rushabhdoshi.com/assets/microphone.png" width="300px"/>
+
 ## Summary
 
 A toy summarizer for english language podcasts. Testing with audio lengths of 15-30 minutes. The summarizer uses OpenAI APIs to transcribe speech and generate summaries from the transcriptions.
