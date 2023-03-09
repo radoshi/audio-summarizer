@@ -139,13 +139,25 @@ def summarize_chunks(chunks):
             messages=create_messages(
                 system=SYSTEM_PROMPT,
                 user=user_prompt,
-                assistant=assistant_prompt,
             ),
             max_tokens=tokens,
             temperature=TEMPERATURE,
         )
-        summaries.append(response)
-    return summaries
+        summaries.append(response["choices"][0]["message"]["content"])
+
+    # Resummarize the summaries.
+    summary = " ".join(summaries)
+    response = openai.ChatCompletion.create(
+        model=CHAT_MODEL,
+        messages=create_messages(
+            system=SYSTEM_PROMPT,
+            user=USER_PROMPT.RESUMMARIZE.format(summary=summary),
+        ),
+        max_tokens=MAX_TOKENS.RESUMMARIZE,
+        temperature=TEMPERATURE,
+    )
+
+    return response["choices"][0]["message"]["content"]
 
 
 def summarize(transcript: str) -> list:
@@ -166,8 +178,7 @@ def summarize(transcript: str) -> list:
             chunk = " ".join(words[i : i + MAX_WORDS])
             chunks.append(chunk)
         logging.debug("Chunks: %s", chunks)
-        summaries = summarize_chunks(chunks)
-        return summaries
+        return summarize_chunks(chunks)
 
     # Single chunk summary prompts are different from multi-chunk prompts
     user_prompt = USER_PROMPT.ONE_SHOT.format(transcript=transcript)
@@ -178,7 +189,7 @@ def summarize(transcript: str) -> list:
         max_tokens=MAX_TOKENS.SINGLE_SHOT,
         temperature=TEMPERATURE,
     )
-    return [response]
+    return response["choices"][0]["message"]["content"]
 
 
 def save_summary(summary, filename):
@@ -280,26 +291,19 @@ if __name__ == "__main__":
 
         # load the transcript from a file
         logging.info("Loading transcript from %s", TRANSCRIPT_FILE)
+        if not TRANSCRIPT_FILE.exists():
+            print(f"Error: transcript file {TRANSCRIPT_FILE} does not exist")
+            exit(1)
         text = TRANSCRIPT_FILE.read_text()
 
         # summarize the transcript
         logging.info("Summarizing transcript")
-        summaries = summarize(text)
+        summary = summarize(text)
 
-        # save the summaries to files
-        for i, summary in enumerate(summaries):
-            filename = OUT_DIR / f"{AUDIO_FILE.name}.{i}.summary.json"
-            logging.info("Saving chunk summary to %s", filename)
-            filename.write_text(str(summary))
-
-        # save the summary to a file
         logging.info("Saving final summary to %s", SUMMARY_FILE)
-        overall_summary = " ".join(
-            [summary.choices[0]["message"]["content"] for summary in summaries]
-        )
-        SUMMARY_FILE.write_text(overall_summary)
+        SUMMARY_FILE.write_text(summary)
 
-        print(f"Summary:\n{overall_summary}")
+        print(f"Summary:\n{summary}")
 
     else:
         print(f"Error: command {args.command} not recognized")
